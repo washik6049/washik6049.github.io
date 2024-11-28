@@ -164,6 +164,10 @@ body.dark-mode #mobile-menu {
     margin-top: 15px;
   }
 
+  .signatures {
+    font-size: 22px;
+  }
+
   /* Hamburger icon styling */
   .menu-icon {
     display: flex;
