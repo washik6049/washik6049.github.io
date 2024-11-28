@@ -2,9 +2,7 @@
 # Responsive Portfolio using HTML, CSS, and JavaScript
 
 Welcome to my **Responsive Portfolio Website**, a project that showcases my skills and serves as a platform for introducing myself. This portfolio is built with HTML, CSS, and JavaScript, designed to be fully responsive, and optimized for various devices.
-
-(![image](https://github.com/user-attachments/assets/61b21ffa-da65-4eaa-b4dd-cd844a9b022f)
-)
+![image](https://github.com/user-attachments/assets/61b21ffa-da65-4eaa-b4dd-cd844a9b022f)
 
 ## 🌟 Features
 
@@ -62,12 +60,12 @@ Responsive-Portfolio-using-HTML-CSS-JS/
 
 ## 🖼️ Screenshots
 
-(![image](https://github.com/user-attachments/assets/26696d1e-0a42-447d-9e71-f06b539860b6)
-)
+![image](https://github.com/user-attachments/assets/26696d1e-0a42-447d-9e71-f06b539860b6)
+
 *Home Section with introductory details.*
 
-(![image](https://github.com/user-attachments/assets/4ac1a781-2530-4df5-ace8-ecf4af7d1da6)
-)
+![image](https://github.com/user-attachments/assets/4ac1a781-2530-4df5-ace8-ecf4af7d1da6)
+
 *Dark mode activated for a sleek look.*
 
 ## 🤝 Contributing
