@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Washik</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <div class="nav">
+      <!-- Signature -->
+      <h1 class="signatures">&lt; Washik /&gt;</h1>
+  
+      <!-- Hamburger Menu Icon -->
+      <div class="menu-icon" id="menu-icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+  
+      <!-- Navigation Links -->
+      <nav>
+        <ul id="mobile-menu">
+          <li><a href="#home"><i class="fa fa-home"></i> Home</a></li>
+          <li><a href="#about"><i class="fa fa-user"></i> About</a></li>
+          <li><a href="#services"><i class="fa fa-briefcase"></i> Services</a></li>
+          <li><a href="#projects"><i class="fa fa-wrench"></i> Projects</a></li>
+          <li><a href="#contact-section"><i class="fa fa-cog"></i> Contact</a></li>
+          <li>
+            <a href="https://drive.google.com/file/d/16X5GxtWciuqdp27Uias63p7viEUaWQXc/view?usp=sharing" class="nav-resume-btn">
+              <i class="fa fa-file"></i> Resume
+            </a>
+          </li>
+          <div class="menu-header">
+            <div class="dark-mode-toggle">
+              <label class="switch">
+                <input type="checkbox" id="dark-mode-toggle">
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <section id="home">
+    <div class="intro">
+      <h2>Welcome to my portfolio! <img src="assets/images/hi.gif" alt="👋"></h2>
+      <h1>Washik <span>Wali Faieaz</span></h1>
+      <p id="role">
+        <span id="arrow">▸</span> <span id="role-text">Web Developer</span>
+      </p>
+      
+      <!-- Social Logo Links -->
+      <div class="social-logos">
+        <a href="https://www.facebook.com/wali.faieaz.1" target="_blank">
+          <img src="assets/images/facebook.png" alt="Facebook Logo">
+        </a>
+        <a href="https://www.instagram.com/_____faieaz_/" target="_blank">
+          <img src="assets/images/instagram.png" alt="Instagram Logo">
+        </a>
+        <a href="https://twitter.com/washik_faieaz" target="_blank">
+          <img src="assets/images/twitter.png" alt="Twitter Logo">
+        </a>
+        <a href="https://www.linkedin.com/in/washik-wali-faieaz-169a78263" target="_blank">
+          <img src="assets/images/linkedin.png" alt="LinkedIn Logo">
+        </a>
+        <a href="https://github.com/washik6049" target="_blank">
+          <img src="assets/images/github.png" alt="GitHub Logo">
+        </a>
+      </div>
+    </div>
+    
+    <!-- Profile Image -->
+    <div class="image">
+      <img src="assets/images/black-white.png" alt="Profile Picture of Washik Wali Faieaz" class="profile-img">
+    </div>
+  </section>
+    
+  <section id="about">
+    <div class="about-container">
+      <div class="about-image">
+        <img src="assets/images/colored.png" alt="Washik Wali Faieaz">
+      </div>
+      <div class="about-content">
+        <h2>About Me</h2>
+        <p class="description">
+          Get to know me :)
+        </p>
+        <h3>Who am I?</h3>
+        <p class="about_name">
+          <strong>I am Washik Wali Faieaz, a Web developer, App developer, Technical blog writer, and UI/UX designer.</strong></p>
+          <p>
+          I am a student of Computer Science and Engineering from Daffodil International University, Bangladesh.
+        </p>
+        <hr class="about-divider">
+        <p class="technologies">
+          <strong>Technologies I have worked with:</strong><br>
+          <span id="tech-line"></span>
+        </p>
+        <hr class="technologies-divider">
+        <div class="info">
+          <p><strong>Name:</strong> Washik Wali Faieaz</p>
+          <p><strong>Age:</strong> 24</p>
+          <p><strong>Email:</strong> washikfaieaz@gmail.com</p>
+          <p><strong>From:</strong> Dhaka, Bangladesh</p>
+        </div>
+        <a href="https://drive.google.com/file/d/16X5GxtWciuqdp27Uias63p7viEUaWQXc/view?usp=sharing" class="resume-btn">Resume</a>
+      </div>
+    </div>
+  </section>
+  
+  <section id="services">
+    <h2>What I Can Do</h2>
+    <p>I may not be perfect but surely I'm of some use :)</p>  
+    <div class="services-container0">
+      <div class="service-card1" onclick="toggleFlip(this)">
+        <div class="service-card-inner">
+          <div class="service-card-front">
+            <img src="assets/images/app.png" alt="Mobile Development">
+            <p>Mobile Development</p>
+          </div>
+          <div class="service-card-back">
+            <p>Modern Mobile App designs, Flutter, Dart, and more..</p>
+            <button class="hire-btn">HIRE ME!</button>
+          </div>
+        </div>
+      </div>
+      <div class="service-card1" onclick="toggleFlip(this)">
+        <div class="service-card-inner">
+          <div class="service-card-front">
+            <img src="assets/images/ui.png" alt="UI/UX Designing">
+            <p>UI/UX Designing</p>
+          </div>
+          <div class="service-card-back">
+            <p>Modern UI/UX Designing - Adobe XD, Mobile & Web designs.</p>
+            <button class="hire-btn">HIRE ME!</button>
+          </div>
+        </div>
+      </div>  
+      <div class="service-card1" onclick="toggleFlip(this)">
+        <div class="service-card-inner">
+          <div class="service-card-front">
+            <img src="assets/images/rapid.png" alt="Rapid Prototyping">
+            <p>Rapid Prototyping</p>
+          </div>
+          <div class="service-card-back">
+            <p>Interactive Prototypes, Promo Videos, Responsive designs.</p>
+            <button class="hire-btn">HIRE ME!</button>
+          </div>
+        </div>
+      </div>
+    </div>  
+    <div class="services-container1">
+      <div class="service-card1" onclick="toggleFlip(this)">
+        <div class="service-card-inner">
+          <div class="service-card-front">
+            <img src="assets/images/web.png" alt="Web Development">
+            <p>Web Development</p>
+          </div>
+          <div class="service-card-back">
+            <p>Modern websites with responsive designs and user-friendly features.</p>
+            <button class="hire-btn">HIRE ME!</button>
+          </div>
+        </div>
+      </div>
+      <div class="service-card1" onclick="toggleFlip(this)">
+        <div class="service-card-inner">
+          <div class="service-card-front">
+            <img src="assets/images/blog.png" alt="Technical Blog Writing">
+            <p>Technical Blog Writing</p>
+          </div>
+          <div class="service-card-back">
+            <p>Writing in-depth technical blogs, tutorials, and documentation.</p>
+            <button class="hire-btn">HIRE ME!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="projects" id="projects">
+    <h2>My Projects</h2>
+    <p>Here are a few samples of my previous work :)</p>
+    <div class="projects-container">
+      <a href="https://github.com/washik6049/sp1-project" target="_blank" class="project-link">
+        <div class="project-card">
+          <img src="assets/images/gofortravel.png" alt="GoForTravel">
+          <div class="project-details">
+            <h3>GoForTravel</h3>
+            <p>The Go For Travel app is a ride-hailing platform that connects users with drivers for convenient and on-demand transportation services.</p>
+          </div>
+        </div>
+      </a>
+      <a href="https://washik6049.github.io/Rideon/" target="_blank" class="project-link">
+        <div class="project-card">
+          <img src="assets/images/rideon.png" alt="Rideon">
+          <div class="project-details">
+            <h3>Rideon</h3>
+            <p>Discover flexible car rentals spanning from one month to one year on our platform, offering convenience and freedom for your extended mobility needs.</p>
+          </div>
+        </div>
+      </a>
+      <a href="https://github.com/washik6049/ScientificCalculator-jframe" target="_blank" class="project-link">
+        <div class="project-card">
+          <img src="assets/images/calculatorb.png" alt="Calculator">
+          <div class="project-details">
+            <h3>Calculator</h3>
+            <p>Empower your mathematical endeavors with our scientific calculator app, equipped with advanced functions for precision and efficiency.</p>
+          </div>
+        </div>
+      </a>
+      <a href="https://washik6049.github.io/Number_Guessing_Game/" target="_blank" class="project-link">
+        <div class="project-card">
+          <img src="assets/images/numberguess.png" alt="Number Guessing Game">
+          <div class="project-details">
+            <h3>Number Guessing Game</h3>
+            <p>Challenge your skills and have fun with our interactive Number Guessing Game, where every guess brings you closer to victory!</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="see-more-container">
+      <a href="https://github.com/washik6049" target="_blank" class="see-more-button">See More</a>
+    </div> 
+  </section>
+  
+  <section class="contact-section" id="contact-section">
+    <div class="container">
+      <h2>Get in touch</h2>
+      <div class="contact-content">
+        <div class="contact-form">
+          <h3>Message Me</h3>
+          <form method="POST"  action="https://formspree.io/f/xbljaakj">
+            <div class="input-group">
+              <input type="text" name="name" placeholder="Name" required />
+              <input type="email" name="email" placeholder="Email" required />
+            </div>
+            <input type="text" name="subject" placeholder="Subject" required />
+            <textarea name="message" placeholder="Message" required></textarea>
+            <button type="submit">Send Your Message</button>
+          </form>         
+        </div>
+        <div class="contact-info">
+          <h2>Contact-info</h2>
+          <p>
+            I'm always on the lookout for exciting freelance opportunities—let's collaborate on something amazing! Feel free to reach out!
+          </p>
+          <ul>
+            <li>
+              <span class="icon">🌐</span>
+              <span>Name: </span> Washik Wali Faieaz
+            </li>
+            <li>
+              <span class="icon">📍</span>
+              <span>Location: </span> Dhaka, Bangladesh
+            </li>
+            <li>
+              <span class="icon">📞</span>
+              <span>Call Me: </span> +880 1750036049
+            </li>
+            <li>
+              <span class="icon">✉️</span>
+              <span>Email: </span> washikfaieaz@gmail.com
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer>
+    <p>© 2024 <a href="https://github.com/washik6049" class="no-underline"> Washik </a>   All rights reserved.</p>
+  </footer>
+<!-- Popup Notification Box -->
+<div id="popup-box" class="popup hidden">
+  <div class="popup-content">
+    <h3>Contact Me</h3>
+    <div class="popup-links">
+      <a href="https://www.facebook.com/wali.faieaz.1" target="_blank" class="popup-btn facebook-btn">Facebook</a>
+      <a href="https://www.linkedin.com/in/washik-wali-faieaz-169a78263" target="_blank" class="popup-btn linkedin-btn">LinkedIn</a>
+      <a href="https://wa.me/+8801750036049" target="_blank" class="popup-btn whatsapp-btn">WhatsApp</a>
+    </div>
+    <button id="back-btn" class="back-btn">Back</button>
+  </div>
+</div>
+
+  <script src="assets/js/script.js"></script>
+
+</body>
+</html>
