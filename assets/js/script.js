@@ -1,6 +1,6 @@
 // Add interactive features if required
 console.log("Welcome to Washik's Portfolio!");
-const roles = ["Web Development", "App Development", "UI/UX Design", "Blogger"];
+const roles = ["Web Development", "App Development", "UI/UX Design", "Blogger", "Researcher"];
 let currentRoleIndex = 0;
 
 function changeRole() {
@@ -43,7 +43,13 @@ document.addEventListener("DOMContentLoaded", function () {
       "C",
       "Python",
       "Java",
-      "C++"
+      "C++",
+      "Django",
+      "SQL",
+      "MySQL",
+      "ML",
+      "Deep Learning",
+      "NLP"
     ];
   
     const techLine = document.getElementById("tech-line");
