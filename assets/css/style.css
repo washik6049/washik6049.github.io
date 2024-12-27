@@ -1376,6 +1376,7 @@ footer {
 }
 .no-underline {
   text-decoration: none;
+  color: #0077b5;
 }
 
 .no-underline:hover {
