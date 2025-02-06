@@ -1384,6 +1384,7 @@ body.dark-mode #certifications {
 /* ========================= */
 /* Fullscreen Image Modal */
 /* ========================= */
+
 .modal {
   display: none;
   position: fixed;
