@@ -257,7 +257,8 @@ body.dark-mode {
 }
 
 
-/* Home Section Layout */
+/* Home Section Layout */ 
+
 #home {
   display: flex;
   justify-content: space-between;
