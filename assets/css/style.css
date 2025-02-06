@@ -1423,6 +1423,7 @@ body.dark-mode #certifications {
 
 
 
+
 /* ========================= */
 /* Volunteering Experience Section */
 /* ========================= */
@@ -1757,4 +1758,70 @@ footer {
 
 .no-underline:hover {
   color: #dc7676;
+}
+
+
+/* ========================= */
+/* Scroll Animation */
+/* ========================= */
+.section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========================= */
+/* Button Hover Effects */
+/* ========================= */
+button, .resume-btn, .hire-btn, .see-more-button {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover, .resume-btn:hover, .hire-btn:hover, .see-more-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255, 77, 77, 0.4);
+}
+
+/* ========================= */
+/* Link Hover Effects */
+/* ========================= */
+a {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+a:hover {
+  color: #ff4d4d;
+  text-shadow: 0 0 10px rgba(255, 77, 77, 0.5);
+}
+
+/* ========================= */
+/* Glowing Card Effect */
+/* ========================= */
+.education-card, .publication-card, .certification-card, .project-card, .volunteering-card{
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-card:hover, .publication-card:hover, .certification-card:hover, .project-card:hover, .volunteering-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(255, 77, 77, 0.4);
+}
+
+/* Optional: Add a subtle glowing border */
+.education-card:hover::before, .publication-card:hover::before, .certification-card:hover::before, .project-card:hover::before,  .volunteering-card:hover::before {
+  content: "";
+  position: absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 77, 77, 0.5);
+  opacity: 1;
+}
+
+html {
+  scroll-behavior: smooth;
 }

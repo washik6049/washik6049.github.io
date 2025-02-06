@@ -155,8 +155,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 function openFullScreen(img) {
   var modal = document.getElementById("imageModal");
   var fullScreenImg = document.getElementById("fullScreenImg");
-  
-  fullScreenImg.src = img.src; // Set image source
+
+  fullScreenImg.src = img.src; // Set the clicked image as the full-screen image
   modal.style.display = "flex"; // Show modal
 }
 
@@ -165,11 +165,29 @@ function closeFullScreen() {
   document.getElementById("imageModal").style.display = "none";
 }
 
-// Close modal when clicking outside image
+// Close modal when clicking outside the image
 document.getElementById("imageModal").addEventListener("click", function(event) {
   if (event.target === this) {
     closeFullScreen();
   }
 });
+
+
+// Function to trigger animations when sections come into view
+function revealSections() {
+  let sections = document.querySelectorAll('.section');
+  let windowHeight = window.innerHeight;
+
+  sections.forEach((section) => {
+    let sectionTop = section.getBoundingClientRect().top;
+    if (sectionTop < windowHeight - 100) {
+      section.classList.add('visible');
+    }
+  });
+}
+
+// Trigger function on scroll
+window.addEventListener('scroll', revealSections);
+revealSections(); // Run on page load
 
 
