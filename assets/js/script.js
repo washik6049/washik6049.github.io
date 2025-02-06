@@ -187,6 +187,7 @@ function revealSections() {
 }
 
 // Trigger function on scroll
+
 window.addEventListener('scroll', revealSections);
 revealSections(); // Run on page load
 

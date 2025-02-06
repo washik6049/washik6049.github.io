@@ -685,6 +685,7 @@ body.dark-mode #tech-line {
 /* ========================= */
 /* Education Section */
 /* ========================= */
+
 #education {
   padding: 40px;
   text-align: center;
@@ -1408,6 +1409,7 @@ body.dark-mode #certifications {
 }
 
 /* Close Button */
+
 .close {
   position: absolute;
   top: 20px;
