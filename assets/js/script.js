@@ -151,3 +151,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// Function to open image in full screen
+function openFullScreen(img) {
+  var modal = document.getElementById("imageModal");
+  var fullScreenImg = document.getElementById("fullScreenImg");
+  
+  fullScreenImg.src = img.src; // Set image source
+  modal.style.display = "flex"; // Show modal
+}
+
+// Function to close full-screen mode
+function closeFullScreen() {
+  document.getElementById("imageModal").style.display = "none";
+}
+
+// Close modal when clicking outside image
+document.getElementById("imageModal").addEventListener("click", function(event) {
+  if (event.target === this) {
+    closeFullScreen();
+  }
+});
+
+
