@@ -151,27 +151,32 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Function to open image in full screen
-function openFullScreen(img) {
-  var modal = document.getElementById("imageModal");
-  var fullScreenImg = document.getElementById("fullScreenImg");
-
-  fullScreenImg.src = img.src; // Set the clicked image as the full-screen image
-  modal.style.display = "flex"; // Show modal
-}
-
-// Function to close full-screen mode
-function closeFullScreen() {
-  document.getElementById("imageModal").style.display = "none";
-}
-
-// Close modal when clicking outside the image
-document.getElementById("imageModal").addEventListener("click", function(event) {
-  if (event.target === this) {
-    closeFullScreen();
+document.addEventListener("DOMContentLoaded", function() {
+  function openFullScreen(img) {
+    var modal = document.getElementById("imageModal");
+    var fullScreenImg = document.getElementById("fullScreenImg");
+    fullScreenImg.src = img.src;
+    modal.style.display = "flex";
   }
-});
 
+  function closeFullScreen() {
+    document.getElementById("imageModal").style.display = "none";
+  }
+
+  document.getElementById("imageModal").addEventListener("click", function(event) {
+    if (event.target === this) {
+      closeFullScreen();
+    }
+  });
+
+  // Attach openFullScreen to all volunteering images globally (redundant with onclick, but ensures robustness)
+  var images = document.querySelectorAll(".volunteering-img");
+  images.forEach(function(img) {
+    img.onclick = function() {
+      openFullScreen(this);
+    };
+  });
+});
 
 // Function to trigger animations when sections come into view
 function revealSections() {
@@ -192,3 +197,68 @@ window.addEventListener('scroll', revealSections);
 revealSections(); // Run on page load
 
 
+// 3. Typing Effect for "Welcome" Text
+document.addEventListener("DOMContentLoaded", function () {
+  const welcomeText = "Welcome to my portfolio!";
+  const welcomeElement = document.querySelector("#home .intro h2");
+  welcomeElement.innerHTML = `<span class="typing-container"></span><img src="assets/images/hi.gif" alt="👋">`;
+  const typingContainer = welcomeElement.querySelector(".typing-container");
+
+  let charIndex = 0;
+
+  function typeWelcome() {
+    if (charIndex < welcomeText.length) {
+      typingContainer.textContent += welcomeText.charAt(charIndex);
+      charIndex++;
+      setTimeout(typeWelcome, 100); // Adjust speed of typing here
+    }
+  }
+
+  typeWelcome(); // Start typing animation
+});
+
+// Ensure all sections are marked for scroll animations (adding .section class dynamically)
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll("#home, #about, #education, #publications, #services, #projects, #certifications, #volunteering, .contact-section");
+  sections.forEach(section => {
+    section.classList.add("section"); // Ensure all animated sections have the .section class
+  });
+});
+
+// 5. Bounce-In Effect for Certification and Volunteering Images on Scroll
+document.addEventListener("DOMContentLoaded", function () {
+  function revealImages() {
+    const images = document.querySelectorAll(".certification-card img, .volunteering-card img");
+    const windowHeight = window.innerHeight;
+
+    images.forEach((img) => {
+      const imgTop = img.getBoundingClientRect().top;
+      if (imgTop < windowHeight - 100 && !img.classList.contains("bounce-in")) {
+        img.classList.add("bounce-in");
+      }
+    });
+  }
+
+  // Trigger on scroll and on initial load
+  window.addEventListener("scroll", revealImages);
+  revealImages();
+});
+
+// Section-Wise Animation Trigger for Education Cards
+document.addEventListener("DOMContentLoaded", function () {
+  function revealEducationCards() {
+    const cards = document.querySelectorAll(".education-card");
+    const windowHeight = window.innerHeight;
+
+    cards.forEach((card) => {
+      const cardTop = card.getBoundingClientRect().top;
+      if (cardTop < windowHeight - 100 && !card.classList.contains("visible")) {
+        card.classList.add("visible");
+      }
+    });
+  }
+
+  // Trigger on scroll and on initial load
+  window.addEventListener("scroll", revealEducationCards);
+  revealEducationCards();
+});

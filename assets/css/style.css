@@ -12,7 +12,7 @@ body {
 
 /* Header container */
 header {
-  background: linear-gradient(to right, #fac7c0, #fc9797);
+  background: linear-gradient(to right, #ffeeec, #fff3f3);
   padding: 15px 20px;
   position: sticky;
   top: 0;
@@ -1383,10 +1383,8 @@ body.dark-mode #certifications {
   color: #f0f0f0;
 }
 
-/* ========================= */
-/* Fullscreen Image Modal */
-/* ========================= */
 
+/* Fullscreen Image Modal */
 .modal {
   display: none;
   position: fixed;
@@ -1409,8 +1407,6 @@ body.dark-mode #certifications {
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
 }
 
-/* Close Button */
-
 .close {
   position: absolute;
   top: 20px;
@@ -1424,8 +1420,6 @@ body.dark-mode #certifications {
 .close:hover {
   color: #ff4d4d;
 }
-
-
 
 
 /* ========================= */
@@ -1475,6 +1469,18 @@ body.dark-mode #volunteering {
   cursor: pointer; /* Indicates interactivity */
 }
 
+/* Volunteering Image */
+.volunteering-card img {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer; /* Indicates it's clickable */
+  transition: transform 0.3s ease;
+}
+
 /* Hover Effect - Moves Card Up */
 .volunteering-card:hover {
   transform: translateY(-10px); /* Moves the card up */
@@ -1486,13 +1492,13 @@ body.dark-mode #volunteering {
 }
 
 .volunteering-card h3 {
-  font-size: 22px;
+  font-size: 15px; /* Changed from 22px to match Certifications */
   color: #ff4d4d;
   margin-bottom: 5px;
 }
 
 .volunteering-card p {
-  font-size: 18px;
+  font-size: 12px; /* Changed from 18px to match Certifications */
   color: #333;
 }
 
@@ -1746,7 +1752,7 @@ button:hover {
 footer {
   text-align: center;
   padding: 20px;
-  background: linear-gradient(to right, #fac7c0, #fc9797);
+  background: linear-gradient(to right, #ffeeec, #fff3f3);
   color: #000000;
 }
 
@@ -1828,4 +1834,512 @@ a:hover {
 
 html {
   scroll-behavior: smooth;
+}
+
+/* ========================= */
+/* New Animations */
+/* ========================= */
+
+/* 1. Background Gradient Animation for Sections */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#home, #about, #education, #publications, #services, #projects, #certifications, #volunteering, .contact-section {
+  background: linear-gradient(45deg, #ffffff, #fffbfb);
+  background-size: 200% 200%;
+  animation: gradientShift 15s ease infinite;
+}
+
+body.dark-mode #home,
+body.dark-mode #about,
+body.dark-mode #education,
+body.dark-mode #publications,
+body.dark-mode #services,
+body.dark-mode #projects,
+body.dark-mode #certifications,
+body.dark-mode #volunteering,
+body.dark-mode .contact-section {
+  background: linear-gradient(45deg, #1e1e1e, #2a2a2a);
+  background-size: 200% 200%;
+  animation: gradientShift 15s ease infinite;
+}
+
+/* 2. Floating Effect for Profile Images */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.about-image img {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* 3. Typing Effect Container (to be used with JS) */
+.typing-container {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #ff4d4d;
+  animation: blinkCursor 0.75s step-end infinite;
+}
+
+@keyframes blinkCursor {
+  0%, 100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #ff4d4d;
+  }
+}
+
+/* 4. Card Rotation Animation for Project Cards */
+@keyframes rotateCard {
+  0% {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(1000px) rotateY(10deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+}
+
+.project-card:hover {
+  animation: rotateCard 2s ease infinite;
+}
+
+/* 5. Staggered Fade-in for Social Logos */
+.social-logos img {
+  opacity: 0;
+  animation: fadeInStagger 0.5s ease forwards;
+}
+
+@keyframes fadeInStagger {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.social-logos img:nth-child(1) { animation-delay: 0.1s; }
+.social-logos img:nth-child(2) { animation-delay: 0.2s; }
+.social-logos img:nth-child(3) { animation-delay: 0.3s; }
+.social-logos img:nth-child(4) { animation-delay: 0.4s; }
+.social-logos img:nth-child(5) { animation-delay: 0.5s; }
+.social-logos img:nth-child(6) { animation-delay: 0.6s; }
+
+/* ========================= */
+/* Additional Animations */
+/* ========================= */
+
+/* 1. Pulse Glow Effect for Section Headings */
+@keyframes pulseGlow {
+  0% {
+    text-shadow: 0 0 5px rgba(255, 77, 77, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(255, 77, 77, 0.8), 0 0 25px rgba(255, 77, 77, 0.5);
+  }
+  100% {
+    text-shadow: 0 0 5px rgba(255, 77, 77, 0.5);
+  }
+}
+
+#home h1,
+#about h2,
+#education h2,
+#publications h2,
+#services h2,
+#projects h2,
+#certifications h2,
+#volunteering h2,
+.contact-section h2 {
+  animation: pulseGlow 3s ease infinite;
+}
+
+/* 2. Scale-Up Effect for Service Card Images */
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.service-card-front img:hover {
+  animation: scaleUp 1s ease infinite;
+}
+
+/* 3. Spin Effect for "See More" Button */
+@keyframes wave {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-5px);
+  }
+  40% {
+    transform: translateY(5px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
+  80% {
+    transform: translateY(3px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.see-more-button:hover {
+  animation: wave 1.5s ease infinite !important;
+}
+
+/* 4. Wave Animation for Resume Buttons */
+@keyframes wave {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-5px);
+  }
+  40% {
+    transform: translateY(5px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
+  80% {
+    transform: translateY(3px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.nav-resume-btn,
+.resume-btn {
+  display: inline-block; /* Ensure the element can animate */
+}
+
+.nav-resume-btn:hover,
+.resume-btn:hover {
+  animation: wave 1.5s ease infinite;
+}
+
+/* 5. Bounce-In Effect for Certification and Volunteering Images */
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.certification-card img,
+.volunteering-card img {
+  opacity: 0; /* Start hidden for animation */
+}
+
+.bounce-in {
+  animation: bounceIn 1s ease forwards;
+}
+
+/* ========================= */
+/* Section-Wise Animations */
+/* ========================= */
+
+/* --- #home Section --- */
+@keyframes textReveal {
+  0% {
+    opacity: 0;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  }
+  100% {
+    opacity: 1;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+#home .intro h1 {
+  animation: textReveal 1.5s ease forwards;
+  animation-delay: 0.5s; /* Delay to sync with page load */
+  opacity: 0; /* Start hidden */
+}
+
+/* --- #about Section --- */
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+#about .about-image img {
+  animation: slideInLeft 1s ease forwards;
+  animation-delay: 0.3s; /* Slight delay for effect */
+  opacity: 0; /* Start hidden */
+}
+
+/* --- #education Section --- */
+@keyframes cardFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.education-card {
+  opacity: 0; /* Start hidden */
+}
+
+.education-card.visible {
+  animation: cardFadeUp 0.8s ease forwards;
+}
+
+/* --- #publications Section --- */
+@keyframes glowBorder {
+  0% {
+    border: 2px solid transparent;
+    box-shadow: 0 0 5px rgba(255, 77, 77, 0.3);
+  }
+  50% {
+    border: 2px solid #ff4d4d;
+    box-shadow: 0 0 15px rgba(255, 77, 77, 0.7);
+  }
+  100% {
+    border: 2px solid transparent;
+    box-shadow: 0 0 5px rgba(255, 77, 77, 0.3);
+  }
+}
+
+.publication-card:hover {
+  animation: glowBorder 2s ease infinite;
+}
+
+/* --- #services Section --- */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.service-card1 {
+  animation: bounce 3s ease infinite;
+}
+
+/* --- #projects Section --- */
+@keyframes tilt {
+  0% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  }
+}
+
+.project-card {
+  animation: tilt 4s ease infinite;
+}
+
+/* --- #certifications Section --- */
+@keyframes rotateFrame {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.certification-card:hover img {
+  animation: rotateFrame 2s linear infinite;
+}
+
+/* --- #volunteering Section --- */
+@keyframes pulseScale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.01);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.volunteering-card {
+  animation: pulseScale 2s ease infinite;
+}
+
+/* --- Contact Section --- */
+@keyframes floatUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-form,
+.contact-info {
+  opacity: 0; /* Start hidden */
+  animation: floatUp 1s ease forwards;
+  animation-delay: 0.2s; /* Slight delay for smooth entry */
+}
+
+/* ========================= */
+/* Additional Animations for #home Section */
+/* ========================= */
+
+/* 1. Zoom-In Effect for Welcome Text (h2) */
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+#home .intro h2 {
+  animation: zoomIn 1s ease forwards;
+  opacity: 0; /* Start hidden to allow animation */
+  animation-delay: 0.2s; /* Sync with page load */
+}
+
+/* 2. Letter Spacing Animation for Name (h1 span) */
+@keyframes spreadLetters {
+  0% {
+    letter-spacing: 5px;
+    opacity: 0;
+  }
+  100% {
+    letter-spacing: 1px;
+    opacity: 1;
+  }
+}
+
+#home .intro h1 span {
+  animation: spreadLetters 1.2s ease forwards;
+  opacity: 0; /* Start hidden */
+  animation-delay: 0.8s; /* Delay to follow h1 reveal */
+}
+
+/* 3. Rotate and Fade for Role Arrow (#arrow) */
+@keyframes rotateFade {
+  0% {
+    opacity: 0;
+    transform: rotate(-90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}
+
+#home #arrow {
+  animation: rotateFade 1s ease forwards;
+  animation-delay: 1s; /* Sync with role text */
+}
+
+/* 4. Social Logos Pop-In with Rotation */
+@keyframes popInRotate {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(45deg);
+  }
+  70% {
+    transform: scale(1.2) rotate(-10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+#home .social-logos a {
+  display: inline-block; /* Ensure transform works */
+  opacity: 0; /* Start hidden */
+  animation: popInRotate 0.8s ease forwards;
+}
+
+#home .social-logos a:nth-child(1) { animation-delay: 1.2s; }
+#home .social-logos a:nth-child(2) { animation-delay: 1.4s; }
+#home .social-logos a:nth-child(3) { animation-delay: 1.6s; }
+#home .social-logos a:nth-child(4) { animation-delay: 1.8s; }
+#home .social-logos a:nth-child(5) { animation-delay: 2.0s; }
+#home .social-logos a:nth-child(6) { animation-delay: 2.2s; }
+
+/* 5. Profile Image Spin-In */
+@keyframes spinIn {
+  0% {
+    opacity: 0;
+    transform: rotate(360deg) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+#home .image img {
+  animation: spinIn 1.5s ease forwards;
+  animation-delay: 0.5s; /* Sync with other elements */
 }
