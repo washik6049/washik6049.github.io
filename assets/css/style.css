@@ -2279,24 +2279,7 @@ body.dark-mode .contact-section {
 #home .intro h1 span {
   animation: spreadLetters 1.2s ease forwards;
   opacity: 0; /* Start hidden */
-  animation-delay: 0.8s; /* Delay to follow h1 reveal */
-}
-
-/* 3. Rotate and Fade for Role Arrow (#arrow) */
-@keyframes rotateFade {
-  0% {
-    opacity: 0;
-    transform: rotate(-90deg);
-  }
-  100% {
-    opacity: 1;
-    transform: rotate(0deg);
-  }
-}
-
-#home #arrow {
-  animation: rotateFade 1s ease forwards;
-  animation-delay: 1s; /* Sync with role text */
+  animation-delay: 0.3s; /* Delay to follow h1 reveal */
 }
 
 /* 4. Social Logos Pop-In with Rotation */
@@ -2317,7 +2300,7 @@ body.dark-mode .contact-section {
 #home .social-logos a {
   display: inline-block; /* Ensure transform works */
   opacity: 0; /* Start hidden */
-  animation: popInRotate 0.8s ease forwards;
+  animation: popInRotate 0.3s ease forwards;
 }
 
 #home .social-logos a:nth-child(1) { animation-delay: 1.2s; }
