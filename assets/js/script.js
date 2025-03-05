@@ -151,33 +151,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-  function openFullScreen(img) {
-    var modal = document.getElementById("imageModal");
-    var fullScreenImg = document.getElementById("fullScreenImg");
-    fullScreenImg.src = img.src;
-    modal.style.display = "flex";
-  }
-
-  function closeFullScreen() {
-    document.getElementById("imageModal").style.display = "none";
-  }
-
-  document.getElementById("imageModal").addEventListener("click", function(event) {
-    if (event.target === this) {
-      closeFullScreen();
-    }
-  });
-
-  // Attach openFullScreen to all volunteering images globally (redundant with onclick, but ensures robustness)
-  var images = document.querySelectorAll(".volunteering-img");
-  images.forEach(function(img) {
-    img.onclick = function() {
-      openFullScreen(this);
-    };
-  });
-});
-
 // Function to trigger animations when sections come into view
 function revealSections() {
   let sections = document.querySelectorAll('.section');
@@ -261,4 +234,106 @@ document.addEventListener("DOMContentLoaded", function () {
   // Trigger on scroll and on initial load
   window.addEventListener("scroll", revealEducationCards);
   revealEducationCards();
+});
+
+// Ensure Fullscreen Functionality for Certification Images
+document.addEventListener("DOMContentLoaded", function () {
+  // Attach openFullScreen to all certification images
+  var certImages = document.querySelectorAll(".certificate-img");
+  certImages.forEach(function (img) {
+    img.onclick = function () {
+      openFullScreen(this);
+    };
+  });
+});
+
+// Consolidated Fullscreen Functionality for Both Volunteering and Certification Images
+document.addEventListener("DOMContentLoaded", function () {
+  // Debug: Confirm the script is running
+  console.log("DOM fully loaded, setting up fullscreen listeners");
+
+  // Functions for opening and closing the fullscreen modal
+  function openFullScreen(img) {
+    console.log("openFullScreen called for image:", img.src); // Debug log
+    var modal = document.getElementById("imageModal");
+    var fullScreenImg = document.getElementById("fullScreenImg");
+
+    if (!modal || !fullScreenImg) {
+      console.error("Modal or fullScreenImg element not found!");
+      return;
+    }
+
+    fullScreenImg.src = img.src;
+    modal.style.display = "flex";
+  }
+
+  function closeFullScreen() {
+    console.log("closeFullScreen called"); // Debug log
+    var modal = document.getElementById("imageModal");
+    if (modal) {
+      modal.style.display = "none";
+    } else {
+      console.error("Modal element not found!");
+    }
+  }
+
+  // Attach openFullScreen to all volunteering images
+  var volunteeringImages = document.querySelectorAll(".volunteering-img");
+  volunteeringImages.forEach(function (img) {
+    img.onclick = function () {
+      console.log("Volunteering image clicked:", img.src); // Debug log
+      openFullScreen(this);
+    };
+  });
+
+  // Attach openFullScreen to all certification images
+  var certImages = document.querySelectorAll(".certificate-img");
+  certImages.forEach(function (img) {
+    img.onclick = function () {
+      console.log("Certification image clicked:", img.src); // Debug log
+      openFullScreen(this);
+    };
+  });
+
+  // Attach closeFullScreen to modal click
+  var modal = document.getElementById("imageModal");
+  if (modal) {
+    modal.addEventListener("click", function (event) {
+      if (event.target === this || event.target.classList.contains("close")) {
+        closeFullScreen();
+      }
+    });
+  } else {
+    console.error("Modal element not found on page load!");
+  }
+
+  // Expose functions globally to ensure inline onclick works
+  window.openFullScreen = openFullScreen;
+  window.closeFullScreen = closeFullScreen;
+});
+
+// Make Entire Publication Card Clickable
+document.addEventListener("DOMContentLoaded", function () {
+  // Select all publication cards
+  const publicationCards = document.querySelectorAll(".publication-card");
+
+  publicationCards.forEach(function (card) {
+    card.addEventListener("click", function (e) {
+      // Find the link inside the card
+      const link = card.querySelector("a");
+      if (link) {
+        const href = link.getAttribute("href");
+        console.log("Publication card clicked, navigating to:", href); // Debug log
+
+        if (href) {
+          // Open the link in a new tab (mimics target="_blank")
+          window.open(href, "_blank");
+        } else {
+          console.warn("No href found in the link inside the card:", card);
+        }
+      } else {
+        console.warn("No link found inside the publication card:", card);
+      }
+    });
+  });
 });

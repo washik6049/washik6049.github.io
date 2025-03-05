@@ -1774,17 +1774,16 @@ footer {
 /* ========================= */
 /* Scroll Animation */
 /* ========================= */
-.section {
+.section:not(#home) {
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-.section.visible {
+.section:not(#home).visible {
   opacity: 1;
   transform: translateY(0);
 }
-
 /* ========================= */
 /* Button Hover Effects */
 /* ========================= */
@@ -1995,7 +1994,7 @@ body.dark-mode .contact-section {
   animation: scaleUp 1s ease infinite;
 }
 
-/* 3. Spin Effect for "See More" Button */
+/* 3. Wave Animation for "See More" Button */
 @keyframes wave {
   0% {
     transform: translateY(0);
@@ -2192,20 +2191,6 @@ body.dark-mode .contact-section {
   animation: tilt 4s ease infinite;
 }
 
-/* --- #certifications Section --- */
-@keyframes rotateFrame {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.certification-card:hover img {
-  animation: rotateFrame 2s linear infinite;
-}
-
 /* --- #volunteering Section --- */
 @keyframes pulseScale {
   0% {
@@ -2241,4 +2226,3 @@ body.dark-mode .contact-section {
   animation: floatUp 1s ease forwards;
   animation-delay: 0.2s; /* Slight delay for smooth entry */
 }
-
