@@ -15,7 +15,7 @@ Welcome to my **Responsive Portfolio Website**, a project that showcases my skil
 ## 🔗 Live Preview
 
 Check out the live version of the website here:  
-[**Responsive Portfolio Website**](https://washik6049.github.io/Responsive-Portfolio-using-HTML-CSS-JS/)
+[**Responsive Portfolio Website**](https://washik6049.github.io)
 
 ## 🛠️ Technologies Used
 
@@ -30,11 +30,11 @@ Responsive-Portfolio-using-HTML-CSS-JS/
 │
 ├── assets/
 │   ├── images/         # All images used in the website
-│   ├── styles/         # Additional stylesheets
-│
+│   ├── css/            # Additional stylesheets
+|       ├── style.css   # Main CSS file
+│   ├── js/
+        ├── script.js   # Main JavaScript file 
 ├── index.html          # Main HTML file
-├── style.css           # Main CSS file
-├── script.js           # Main JavaScript file
 └── README.md           # Project description
 ```
 
@@ -42,12 +42,12 @@ Responsive-Portfolio-using-HTML-CSS-JS/
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/washik6049/Responsive-Portfolio-using-HTML-CSS-JS.git
+   git clone https://github.com/washik6049/washik6049.github.io.git
    ```
 
 2. **Navigate to the project directory**:
    ```bash
-   cd Responsive-Portfolio-using-HTML-CSS-JS
+   cd washik6049.github.io
    ```
 
 3. **Open `index.html` in your browser** to view the portfolio.
